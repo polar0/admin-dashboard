@@ -6,17 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="./main.js" defer></script>
-    <title>Admin Dashboard</title>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <title>Crypto Website</title>
   </head>
   <body>
+    <div id="blur-container"></div>
     <div class="container">
-      <div class="header">
-        <div class="search">
-          <div class="icon">icon</div>
-          <input type="text" />
+      <div class="header" style="z-index: 1">
+        <div class="greeting">Assets</div>
+
+        <div class="interact">
+          <button class="buy">Buy</button>
+          <button class="send">Send</button>
         </div>
+
         <div class="profile">
-          <div class="alert">Dring</div>
+          <div class="alert">
+            <i class="bi bi-bell" style="font-size: 1rem"></i>
+          </div>
+
+          <div class="wallet">
+            <i class="bi bi-wallet" style="font-size: 1.5rem"></i>
+            <div class="wallet-menu">
+              <div class="adress" value="0x2323231123123">
+                0x2323231123123
+                <i class="bi bi-clipboard-check" style="font-size: 1rem"></i>
+              </div>
+              <div class="empty"></div>
+              <div class="adress" value="0x2323231123123">
+                0x2323231123123
+                <i class="bi bi-clipboard-check" style="font-size: 1rem"></i>
+              </div>
+              <div class="empty"></div>
+              <div class="add">Add wallet</div>
+            </div>
+          </div>
           <div class="pfp">
             <img
               src="./assets/images/profile-pic.png"
@@ -24,74 +51,129 @@
               alt="Profile picture"
             />
           </div>
-          <div class="pseudo">Bob Doe</div>
-        </div>
-        <div class="greeting">Hi there</div>
-        <div class="interact">
-          <div class="buy">Buy</div>
-          <div class="exchange">Exchange</div>
-          <div class="send">Send</div>
         </div>
       </div>
 
       <div class="sidebar">
-        <div class="title left">
-          <i class="bi bi-star">icon</i>
+        <div class="sidebar-left">
+          <div class="logo">
+            <img
+              src="./assets/images/noun-portal-63273.svg"
+              alt="logo"
+              width="100%"
+            />
+          </div>
+          <span class="empty"></span>
+          <i class="bi bi-currency-exchange"></i>
+          <i class="bi bi-star"></i>
+          <i class="bi bi-arrow-left-right"></i>
+          <i class="bi bi-clock-history"></i>
+          <i class="bi bi-compass"></i>
+          <span class="empty"></span>
+          <i class="bi bi-gear"></i>
+          <i class="bi bi-question-circle"></i>
+          <i class="bi bi-shield-check"></i>
         </div>
-        <span class="title right" value="Dashboard"></span>
-
-        <div class="item left">
-          <i class="bi bi-currency-exchange">icon</i>
+        <div class="sidebar-right">
+          <span value="Dashboard" href="#home"></span>
+          <span class="empty"></span>
+          <span value="Buy / Send" href="#buy-send"></span>
+          <span value="Assets" href="#assets"></span>
+          <span value="Swap" href="#swap"></span>
+          <span value="Transactions" href="#transactions"></span>
+          <span value="Explore" href="#explore"></span>
+          <span class="empty"></span>
+          <span value="Settings" href="#settings"></span>
+          <span value="Support" href="#support"></span>
+          <span value="Privacy" href="#privacy"></span>
         </div>
-        <span value="Buy / Send"></span>
-
-        <div class="item left">
-          <i class="bi bi-star">icon</i>
-        </div>
-        <span value="Assets"></span>
-
-        <div class="item left">
-          <i class="bi bi-arrow-left-right">icon</i>
-        </div>
-        <span value="Swap"></span>
-
-        <div class="item left">
-          <i class="bi bi-wallet2">icon</i>
-        </div>
-        <span value="Transactions"></span>
-
-        <div class="item left">
-          <i class="bi bi-compass">icon</i>
-        </div>
-        <span value="Explore"></span>
-
-        <div class="item left">
-          <i class="bi bi-gear">icon</i>
-        </div>
-        <span value="Settings"></span>
-
-        <div class="item left">
-          <i class="bi bi-question-circle">icon</i>
-        </div>
-        <span value="Support"></span>
-
-        <div class="item left">
-          <i class="bi bi-shield-check">icon</i>
-        </div>
-        <span value="Privacy"></span>
       </div>
 
       <div class="content">
-        <div class="projects">
-          <div class="title">Your Projects</div>
-          <div class="card">Project 1</div>
-          <div class="card">Project 2</div>
-          <div class="card">Project 3</div>
-          <div class="card">Project 4</div>
-          <div class="card">Project 5</div>
-          <div class="card">Project 6</div>
+        <div class="wrapper">
+          <div class="left">
+            <div class="main-card">
+              <div class="infos">
+                <span>Your wallet</span>
+                <span>$ 184.32</span>
+              </div>
+
+              <div class="graph">
+                <img src="./assets/charts/chart1.svg" alt="Chart" />
+              </div>
+            </div>
+
+            <div class="other-cards">
+              <div class="search">
+                <i class="bi bi-search" style="font-size: 1rem"></i>
+                <input type="text" />
+              </div>
+              <div class="assets-table">
+                <div class="table-title">Your assets</div>
+                <div class="table-header">
+                  <div class="table-header-item">Currency</div>
+                  <div class="table-header-item">Balance</div>
+                  <div class="table-header-item">Price</div>
+                  <div class="table-header-item">Variation</div>
+                </div>
+                <div class="table-content">
+                  <div class="table-item">
+                    <div class="table-item-currency">
+                      <div class="table-item-currency-icon">
+                        <img
+                          src="./assets/images/icons/btc.svg"
+                          alt="Bitcoin"
+                        />
+                      </div>
+                      <div class="table-item-currency-shortcut">BTC</div>
+                      <div class="table-item-currency-name">Bitcoin</div>
+                    </div>
+                    <div class="table-item-balance">
+                      <div class="table-item-balance-real">$ 110</div>
+                      <div class="table-item-balance-crypto">
+                        0.00259074 BTC
+                      </div>
+                    </div>
+                    <div class="table-item-price">
+                      <div class="table-item-price-real">$ 42 458.78</div>
+                      <div class="table-item-price-crypto">1 BTC</div>
+                    </div>
+                    <div class="table-item-variation">+7.45&nbsp;%</div>
+                  </div>
+
+                  <div class="table-item">
+                    <div class="table-item-currency">
+                      <div class="table-item-currency-icon">
+                        <img
+                          src="./assets/images/icons/eth.svg"
+                          alt="Ethereum"
+                        />
+                      </div>
+                      <div class="table-item-currency-shortcut">ETH</div>
+                      <div class="table-item-currency-name">Ethereum</div>
+                    </div>
+                    <div class="table-item-balance">
+                      <div class="table-item-balance-real">$ 283.23</div>
+                      <div class="table-item-balance-crypto">
+                        0.10263629 ETH
+                      </div>
+                    </div>
+                    <div class="table-item-price">
+                      <div class="table-item-price-real">$ 2 759.55</div>
+                      <div class="table-item-price-crypto">1 ETH</div>
+                    </div>
+                    <div class="table-item-variation">+4.3&nbsp;%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="informations">Informations</div>
+          </div>
         </div>
-        <div class="updates">
+      </div>
+      <!-- <div class="updates">
           <div class="announcements">
             <div class="title">Announcements</div>
             <div class="announcements-content">
@@ -109,8 +191,7 @@
               <div class="trend">Her</div>
             </div>
           </div>
-        </div>
-      </div>
+        </div> -->
     </div>
   </body>
 </html>
