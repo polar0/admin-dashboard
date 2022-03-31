@@ -104,7 +104,7 @@ function hideWallet() {
 }
 
 function copyWalletSelection() {
-  if (this.getAttribute('class') !== 'adress') {
+  if (this.getAttribute('class') !== 'address') {
     return;
   } else {
     navigator.clipboard

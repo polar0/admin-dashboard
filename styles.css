@@ -1,4 +1,4 @@
-@import './node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import './assets/bootstrap-icons/font/bootstrap-icons.css';
 
 @font-face {
   font-family: Graphik;
@@ -404,7 +404,7 @@ ul {
 /*
 - Your wallet
 -> Signaler que ça a été copié
-eth + adresse wallet
+eth + addresse wallet
 - blur le reste quand menu ouvert
 - eventuellement menu sur le profil en haut
 */
